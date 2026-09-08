@@ -1,30 +1,32 @@
 # Data Warehouse and Analytics Project
 
-Welcome to the **Data Warehouse and Analytics Project** repository! 🚀  
-This project demonstrates a comprehensive data warehousing and analytics solution, from building a data warehouse to generating actionable insights. Designed as a portfolio project, it highlights industry best practices in data engineering and analytics.
+An end-to-end data warehouse built with SQL Server that integrates ERP and CRM sales data into a layered analytical architecture.
+
+## Tech Stack Used:
+** SQL Server · T-SQL · ETL/ELT · Data Modeling · Medallion Architecture **
+
+--
+-
+## Data Architecture
+
+The data architecture for this project follows Medallion Architecture **Bronze**, **Silver**, and **Gold** layers
+
+1. **Bronze Layer**: to Store the raw CSV data as-is from the source systems.
+2. **Silver Layer**: Containing the cleaned, standardized/normalized data, fully prepared for analysis.
+3. **Gold Layer**: Houses the "business-ready data", modeled into a dimensional star schema.
+
+It's A minimal approach that I am most specialized in and often rely on in building Data Warehouses  
 
 ---
-## 🏗️ Data Architecture
-
-The data architecture for this project follows Medallion Architecture **Bronze**, **Silver**, and **Gold** layers:
-![Data Architecture](docs/data_architecture.png)
-
-1. **Bronze Layer**: Stores raw data as-is from the source systems. Data is ingested from CSV Files into SQL Server Database.
-2. **Silver Layer**: This layer includes data cleansing, standardization, and normalization processes to prepare data for analysis.
-3. **Gold Layer**: Houses business-ready data modeled into a star schema required for reporting and analytics.
-
----
-## 📖 Project Overview
+## Project Overview
 
 This project involves:
 
-1. **Data Architecture**: Designing a Modern Data Warehouse Using Medallion Architecture **Bronze**, **Silver**, and **Gold** layers.
+1. **Data Architecture**: Choice fell on the Medallion Architecture for it's minimalism and simplicity.
 2. **ETL Pipelines**: Extracting, transforming, and loading data from source systems into the warehouse.
 3. **Data Modeling**: Developing fact and dimension tables optimized for analytical queries.
-4. **Analytics & Reporting**: Creating SQL-based reports and dashboards for actionable insights.
 
-
-## 🚀 Project Objectives
+## Project Objectives
 
 ### Building the Data Warehouse (Data Engineering)
 
@@ -32,11 +34,18 @@ This project involves:
 Develop a modern data warehouse using SQL Server to consolidate sales data, enabling analytical reporting and informed decision-making.
 
 #### Specifications
-- **Data Sources**: Import data from two source systems (ERP and CRM) provided as CSV files.
+- **Data Sources**: Importing data from two source systems (ERP and CRM) provided as CSV files that I came across online.
 - **Data Quality**: Cleanse and resolve data quality issues prior to analysis.
-- **Integration**: Combine both sources into a single, user-friendly data model designed for analytical queries.
-- **Scope**: Focus on the latest dataset only; historization of data is not required.
-- **Documentation**: Provide clear documentation of the data model to support both business stakeholders and analytics teams.
+- **Integration**: Combine both sources into a single, business-ready and user-friendly data model.
+- **Scope**: Focusing on up-to-date datasets only, avoiding unnecessary data historization.
+- **Documentation**: Provide clear documentation of the data, given this projects is ultimately a portfolio project
+
+## Key technical decisions
+
+- **Bronze/Silver/Gold**: Chosen for it's minimalist, simple and functional nature.
+- **star schema**: I picked it over the snowflake schema, as I Favored speed over storage. 
+- **particular fact/dimension relationships**: All of the customers information from the silver layer was combined through their IDs,            where the products information was through their given product keys then both linked to the Sales Details forming the star schema.
+-**particular quality checks**: Given it's importance I didn't hold back on quality checks, you will find them all documented in the "tests" folder.
 
 ---
 
