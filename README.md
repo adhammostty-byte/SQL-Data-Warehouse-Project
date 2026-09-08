@@ -5,8 +5,7 @@ An end-to-end data warehouse built with SQL Server that integrates ERP and CRM s
 ## Tech Stack Used:
 **SQL Server · T-SQL · ETL/ELT · Data Modeling · Medallion Architecture**
 
---
--
+
 ## Data Architecture
 
 The data architecture for this project follows Medallion Architecture **Bronze**, **Silver**, and **Gold** layers
@@ -26,12 +25,9 @@ This project involves:
 2. **ETL Pipelines**: Extracting, transforming, and loading data from source systems into the warehouse.
 3. **Data Modeling**: Developing fact and dimension tables optimized for analytical queries.
 
-## Project Objectives
 
-### Building the Data Warehouse (Data Engineering)
-
-#### Main Objective
-Develop a modern data warehouse using SQL Server to consolidate sales data, enabling analytical reporting and informed decision-making.
+#### Main Project Objective
+Developing a modern data warehouse using SQL Server to consolidate sales data, enabling analytical reporting and informed decision-making.
 
 #### Specifications
 - **Data Sources**: Importing data from two source systems (ERP and CRM) provided as CSV files that I came across online.
@@ -45,7 +41,7 @@ Develop a modern data warehouse using SQL Server to consolidate sales data, enab
 - **Bronze/Silver/Gold**: Chosen for it's minimalist, simple and functional nature.
 - **star schema**: I picked it over the snowflake schema, to keep the analytical model simple, reduce join complexity, and make it easier   for BI tools and analysts to query.
 - **Fact-Dimension Relationships**: Customer and product attributes are consolidated into dimensional tables using their business keys, while the sales fact table references these dimensions through surrogate keys.
--**particular quality checks**: Given it's importance to ensure the quality, I made sure to provide all the quality tests I used, you will find them all documented in the "tests" folder.
+- **particular quality checks**: Given it's importance to ensure the quality, I made sure to provide all the quality tests I used, you will find them all documented in the "tests" folder.
 
 ## Key Results ##:
 **Number of source tables**: 6
@@ -73,18 +69,18 @@ Mountain-200 Black- 38	With 1294854 Sales.
 
 ## 📂 Repository Structure
 ```
-data-warehouse-project/
+Data-Warehouse-Project/
 │
-├── datasets/                           # Raw datasets used for the project (ERP and CRM data)
+├── Datasets/                           # Raw datasets used for the project (ERP and CRM data)
 │
-├── docs/                               # Project documentation and architecture details
-│   ├── data_catalog.md                 # Catalog of datasets, including field descriptions and metadata
-│   ├── naming-conventions.md           # Consistent naming guidelines for tables, columns, and files
+├── Docs/                               # Project documentation and architecture details
+│   ├── Data_Catalog.md                 # Catalog of datasets, including field descriptions and metadata
+│   ├── Naming_Conventions.md           # Consistent naming guidelines for tables, columns, and files
 │
-├── scripts/                            # SQL scripts for ETL and transformations
-│   ├── bronze/                         # Scripts for extracting and loading raw data
-│   ├── silver/                         # Scripts for cleaning and transforming data
-│   ├── gold/                           # Scripts for creating analytical models
+├── Scripts/                            # SQL scripts for ETL and transformations
+│   ├── Bronze/                         # Scripts for extracting and loading raw data
+│   ├── Silver/                         # Scripts for cleaning and transforming data
+│   ├── Gold/                           # Scripts for creating analytical models
 │
 ├── tests/                              # Test scripts and quality files
 │
@@ -93,3 +89,8 @@ data-warehouse-project/
 ├── .gitignore                          # Files and directories to be ignored by Git
 ```
 ---
+
+
+
+### Credits to the Content Creator and Data Engineer "Data With Baraa" for Aspiring this project and aspiring me personally to become a Data Engineer. ###
+## Noting that even so I own him credit for aspiring this project, this is not a copy-paste of his work and that I personally added and changed beyond the walkthrough, simplified and refined his work to fit the latest version of the Microsoft SQL Server.
