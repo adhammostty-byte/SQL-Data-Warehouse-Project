@@ -15,14 +15,14 @@ The data architecture for this project follows Medallion Architecture **Bronze**
 2. **Silver Layer**: Containing the cleaned, standardized/normalized data, fully prepared for analysis.
 3. **Gold Layer**: Houses the "business-ready data", modeled into a dimensional star schema. trading some normalization/storage efficiency for simplicity, usability, and efficient analytical querying.
 
-It's A minimal approach that I am most specialized in and often rely on in building Data Warehouses  
+It's a minimal approach that I am most specialized in and often rely on in building Data Warehouses for the incremental data quality improvement and traceability it provides.   
 
 ---
 ## Project Overview
 
 This project involves:
 
-1. **Data Architecture**: Choice fell on the Medallion Architecture for it's minimalism and simplicity.
+1. **Data Architecture**: I chose the Medallion Architecture for its simplicity and clear separation of data-processing stages.
 2. **ETL Pipelines**: Extracting, transforming, and loading data from source systems into the warehouse.
 3. **Data Modeling**: Developing fact and dimension tables optimized for analytical queries.
 
