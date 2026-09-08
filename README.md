@@ -3,7 +3,7 @@
 An end-to-end data warehouse built with SQL Server that integrates ERP and CRM sales data into a layered analytical architecture.
 
 ## Tech Stack Used:
-** SQL Server · T-SQL · ETL/ELT · Data Modeling · Medallion Architecture **
+**SQL Server · T-SQL · ETL/ELT · Data Modeling · Medallion Architecture**
 
 --
 -
@@ -13,7 +13,7 @@ The data architecture for this project follows Medallion Architecture **Bronze**
 
 1. **Bronze Layer**: to Store the raw CSV data as-is from the source systems.
 2. **Silver Layer**: Containing the cleaned, standardized/normalized data, fully prepared for analysis.
-3. **Gold Layer**: Houses the "business-ready data", modeled into a dimensional star schema.
+3. **Gold Layer**: Houses the "business-ready data", modeled into a dimensional star schema. trading some normalization/storage efficiency for simplicity, usability, and efficient analytical querying.
 
 It's A minimal approach that I am most specialized in and often rely on in building Data Warehouses  
 
@@ -43,9 +43,31 @@ Develop a modern data warehouse using SQL Server to consolidate sales data, enab
 ## Key technical decisions
 
 - **Bronze/Silver/Gold**: Chosen for it's minimalist, simple and functional nature.
-- **star schema**: I picked it over the snowflake schema, as I Favored speed over storage. 
-- **particular fact/dimension relationships**: All of the customers information from the silver layer was combined through their IDs,            where the products information was through their given product keys then both linked to the Sales Details forming the star schema.
--**particular quality checks**: Given it's importance I didn't hold back on quality checks, you will find them all documented in the "tests" folder.
+- **star schema**: I picked it over the snowflake schema, to keep the analytical model simple, reduce join complexity, and make it easier   for BI tools and analysts to query.
+- **Fact-Dimension Relationships**: Customer and product attributes are consolidated into dimensional tables using their business keys, while the sales fact table references these dimensions through surrogate keys.
+-**particular quality checks**: Given it's importance to ensure the quality, I made sure to provide all the quality tests I used, you will find them all documented in the "tests" folder.
+
+## Key Results ##:
+**Number of source tables**: 6
+**Number of records ingested**: 116292
+**Number of records after cleaning**: 116283 (primarily due to duplicate and invalid records)
+**Number of Gold-layer tables**: 3
+**Important transformations performed**: CRM/ERP integration, Data cleansing, deduplication, NULL handling, type conversion, categorical standardization, derived columns, surrogate-key generation, Enrichment, Business logic and rules.
+## Example analytical queries ##:-
+**Top Performing Products**:
+Mountain-200 Black- 46	With 1373454 Sales.
+Mountain-200 Black- 42	With 1363128 Sales.
+Mountain-200 Silver- 38	With 1339394 Sales.
+Mountain-200 Silver- 46	With 1301029 Sales.
+Mountain-200 Black- 38	With 1294854 Sales.
+**Sales by year 2010-2014**:
+2010	had 43419.
+2011	had 7075088.
+2012	had 5842231.
+2013	had 16344878.
+2014	had 45642.
+## Example business insights ##:
+**Product "Mountain-200 Black- 46" was the highest-revenue product, generating $1,719K and contributing the highest to total sales. suggesting it is a key revenue driver and should receive priority in inventory planning.**
 
 ---
 
