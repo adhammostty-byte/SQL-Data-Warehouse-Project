@@ -82,7 +82,7 @@ Data-Warehouse-Project/
 │   ├── Silver/                         # Scripts for cleaning and transforming data
 │   ├── Gold/                           # Scripts for creating analytical models
 │
-├── tests/                              # Test scripts and quality files
+├── Tests/                              # Test scripts and quality files
 │
 ├── README.md                           # Project overview and instructions
 ├── LICENSE                             # License information for the repository
@@ -92,5 +92,5 @@ Data-Warehouse-Project/
 
 
 
-### Credits to the Content Creator and Data Engineer "Data With Baraa" for Aspiring this project and aspiring me personally to become a Data Engineer. ###
-## Noting that even so I own him credit for aspiring this project, this is not a copy-paste of his work and that I personally added and changed beyond the walkthrough, simplified and refined his work to fit the latest version of the Microsoft SQL Server.
+### Credits to the Content Creator and Data Engineer "Data With Baraa" for inspiring this project and inspiring me personally to become a Data Engineer. ###
+## Noting that even so I owe him credit for inspiring this project, this is not a copy-paste of his work, where I personally added and changed beyond the walkthrough, simplifying and refining his work to fit the latest version of the Microsoft SQL Server.
