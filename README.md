@@ -43,12 +43,25 @@ Developing a modern data warehouse using SQL Server to consolidate sales data, e
 - **Fact-Dimension Relationships**: Customer and product attributes are consolidated into dimensional tables using their business keys, while the sales fact table references these dimensions through surrogate keys.
 - **particular quality checks**: Given it's importance to ensure the quality, I made sure to provide all the quality tests I used, you will find them all documented in the "tests" folder.
 
-## Key Results ##:
-**Number of source tables**: 6
-**Number of records ingested**: 116292
-**Number of records after cleaning**: 116283 (primarily due to duplicate and invalid records)
-**Number of Gold-layer tables**: 3
-**Important transformations performed**: CRM/ERP integration, Data cleansing, deduplication, NULL handling, type conversion, categorical standardization, derived columns, surrogate-key generation, Enrichment, Business logic and rules.
+## Key Results
+
+### Data Pipeline
+- Source tables: 6
+- Records ingested: 116,292
+- Records after cleaning: 116,283
+- Gold-layer tables: 3
+
+### Key Transformations
+- CRM/ERP integration
+- Data cleansing
+- Deduplication
+- NULL handling
+- Data type conversion
+- Categorical standardization
+- Derived columns
+- Surrogate-key generation
+- Data enrichment
+- Business rules and transformations
 ## Example analytical queries ##:-
 **Top Performing Products**:
 Mountain-200 Black- 46	With 1373454 Sales.
